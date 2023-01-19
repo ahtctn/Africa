@@ -7,14 +7,14 @@
 
 import SwiftUI
 
-struct GalerryView: View {
+struct GalleryView: View {
     var body: some View {
-        Text("Galerry")
+        Text("Gallery")
     }
 }
 
-struct GalerryView_Previews: PreviewProvider {
+struct GalleryView_Previews: PreviewProvider {
     static var previews: some View {
-        GalerryView()
+        GalleryView()
     }
 }
