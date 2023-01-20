@@ -36,13 +36,17 @@ struct MotionAnimationView: View {
         return Double.random(in: 0...2)
     }
     
+    func randomColor() -> Double {
+        return Double.random(in: 0...1)
+    }
+    
     //MARK: BODY
     var body: some View {
         GeometryReader { geometry in
             ZStack {
                 ForEach(0...randomCircle, id: \.self) { item in
                     Circle()
-                        .foregroundColor(.gray)
+                        .foregroundColor(Color(red: randomColor(), green: randomColor(), blue: randomColor()))
                         .opacity(0.15)
                         .frame(width: randomSize(), height: randomSize())
                         .scaleEffect(isAnimating ? randomScale() : 1)
@@ -59,7 +63,7 @@ struct MotionAnimationView: View {
                 } //: LOOP
                 
                 
-                Text("Width: \(Int(geometry.size.width)) Height: \(Int(geometry.size.height))")
+                //Text("Width: \(Int(geometry.size.width)) Height: \(Int(geometry.size.height))")
             }//: ZSTACK
             .drawingGroup()
         }//: GEOMETRY READER
